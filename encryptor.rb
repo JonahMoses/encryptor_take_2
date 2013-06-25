@@ -15,10 +15,10 @@ class Encryptor
     	cipher[lowercase_letter]
     end
 
-    # def encrypt_letter(letter)
-    # 	lowercase_letter = letter.downcase
-    # 	cipher[lowercase_letter]
-    # end
+    def decrypt_letter(letter)
+    	lowercase_letter = letter.downcase
+    	cipher[lowercase_letter].reverse
+    end
 
     def encrypt(string)
     	letters = string.split("")
@@ -26,18 +26,15 @@ class Encryptor
     	encrypted_letter = letters.collect do |letter|
   			encrypt_letter(letter)
   		end.join
-  		
+
     end
 
-    # def encrypt(string)
-	# 	letters = string.split("")
-    	
-	#   results = []
-	#   letters.each do |letter|
-	#   	encrypted_letter = encrypt_letter(letter)
-	#   	results.push(encrypted_letter)
-	#   end
-	#   results.join
-	# end
+	def decrypt(string)
+		letters = string.split("")
+
+		decrypted_letter = letters.collect do |letter|
+			decrypt_letter(letter)
+		end.join
+	end
 
 end
