@@ -16,11 +16,11 @@ class Encryptor
     	cipher[lowercase_letter].reverse
     end
 
-    def encrypt(string)
+    def encrypt(string, rotation)
     	letters = string.split("")
 
     	encrypted_letter = letters.collect do |letter|
-  			encrypt_letter(letter)
+  			encrypt_letter(letter,rotation)
   		end.join
 
     end
