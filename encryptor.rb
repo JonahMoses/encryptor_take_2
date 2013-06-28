@@ -33,4 +33,20 @@ class Encryptor
 		end.join
 	end
 
+    def encrypt_file(filename, rotation)
+    # 1 Create the file handle to the input file
+    encrypt_file = File.open(filename, "r")
+    # 2 Read the text of the input file
+    encrypt_message = encrypt_file.read
+    # 3 Encrypt the text
+    decrypted_text = encrypt(encrypt_message, rotation)
+    # 4 Create a name for the output file
+    decrypted_filename = filename + ".encrypted"
+    # 5 Create an output file handle
+    decrypted_file = File.open(decrypted_filename, "w")
+    # 6 Write out the text
+    decrypted_file.write(decrypted_text)
+    # 7 Close the file
+    decrypted_file.close
+    end
 end
