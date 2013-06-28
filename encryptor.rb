@@ -49,4 +49,25 @@ class Encryptor
     # 7 Close the file
     decrypted_file.close
     end
+
+    def decrypt_file(filename, rotation)
+    # 1 Create the file handle to the encrypted file
+    decrypt_file = File.open(filename, "r")
+    # 2 Read the encrypted text
+    decrypt_message = decrypt_file.read
+    # 3 Decrypt the text by passing in the text and rotation
+    decrypted_message = decrypt(decrypt_message, rotation)
+    # 4 Create a name for the decrypted file
+    decrypted_filename = filename.gsub("encrypted", "decrypted")
+    # 5 Create an output file handle
+    decrypted_file = File.open(decrypted_filename, "w")
+    # 6 Write out the text
+    decrypted_file.write(decrypted_message)
+    # 7 Close the file
+    decrypted_file.close
+    end
+
+
+
+
 end
