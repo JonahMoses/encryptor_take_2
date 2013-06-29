@@ -77,6 +77,9 @@ class Encryptor
         end
     end
 
-
+    def real_time_encryption(string, rotation)
+        real_time_message = encrypt(string, rotation)
+        puts real_time_message
+    end
 
 end
