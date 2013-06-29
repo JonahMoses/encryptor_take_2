@@ -82,4 +82,10 @@ class Encryptor
         puts real_time_message
     end
 
+    def real_time_decryption(string, rotation)
+        real_time_message = decrypt(string, rotation)
+        puts real_time_message
+    end
+
+
 end
